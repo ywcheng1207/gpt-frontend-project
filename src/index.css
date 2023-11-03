@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;1,700;1,900&family=Nosifer&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Lato', 'Noto Sans TC', sans-serif;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+::selection {
+  background: #999492;
+  color: #fff;
+}
+::-moz-selection {
+  background: #999492;
+  color: #fff;
+}
