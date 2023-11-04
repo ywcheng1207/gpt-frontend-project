@@ -34,7 +34,6 @@ const logSlice = createSlice({
         state.chatList = [newChatTitle, ...state.chatList]
       }
       state.chatlog = [...state.chatlog, ...action.payload]
-      console.log(state.chatList)
     },
     handleDeleteChatLog: (state, action) => {
       state.chatList = state.chatList.filter(

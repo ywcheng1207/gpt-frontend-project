@@ -1,4 +1,3 @@
-// import Nav from 'components/Nav'
 import styled from 'styled-components'
 
 const MainStyle = styled.div`
@@ -10,7 +9,6 @@ const MainStyle = styled.div`
 const Main = ({ children }) => {
   return (
     <MainStyle>
-      {/* <Nav /> */}
       {children}
     </MainStyle>
   )
