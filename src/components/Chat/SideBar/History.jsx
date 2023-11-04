@@ -87,7 +87,7 @@ const History = () => {
       }
     }
     getChatListData({ TOKEN: Cookies.get('TK') })
-  }, [logState.toggle])
+  }, [])
 
   let content = ''
   if (isLoading) {

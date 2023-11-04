@@ -7,10 +7,7 @@ const initLog = {
   currentId: localStorage.getItem('last-record') || 1,
   loading: false,
   chatlog: [],
-  chatList: [],
-  // 在發送訊息的時候觸發toggle這個開關
-  // 讓其他需要更新資料的元件觸發useEffect重新取資料
-  toggle: false
+  chatList: []
 }
 
 //
@@ -30,9 +27,14 @@ const logSlice = createSlice({
     },
     handleSendChatLog: (state, action) => {
       if (state.chatlog.length === 0) {
-        state.toggle = !state.toggle
+        const newChatTitle = {
+          chatId: state.currentId,
+          message: action.payload[0].message
+        }
+        state.chatList = [newChatTitle, ...state.chatList]
       }
       state.chatlog = [...state.chatlog, ...action.payload]
+      console.log(state.chatList)
     },
     handleDeleteChatLog: (state, action) => {
       state.chatList = state.chatList.filter(
@@ -42,7 +44,7 @@ const logSlice = createSlice({
         state.currentId = state.chatList[0].chatId
       }
     },
-    handleAddNewChat: (state, action) => {
+    handleAddNewChat: (state, _action) => {
       state.currentId = uuidv4()
       state.chatlog = []
     },
